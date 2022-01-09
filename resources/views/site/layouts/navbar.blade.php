@@ -20,21 +20,25 @@
             <a href="{{route('site.profile')}}" class="nav-link">Profile</a>
           </li>
           <li class="nav-item dropdown">
-              @php
-                  $shows = \App\Models\Show::where('type', 2)->get();
-              @endphp
             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">
                 5 tv-shows
             </a>
             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                @foreach ($shows as $show)
+                @foreach ($fiveRandomShows as $show)
 
-                <li>
-                    <a href="{{route('site.show', $show->id)}}" class="dropdown-item">
-                        {{ Str::limit($show->title??'', 10, '...') }}
-                    </a>
-                </li>
                 @endforeach
+                @forelse ($fiveRandomShows as $item)
+                    <li>
+                        <a href="{{route('site.show', $show->id)}}" class="dropdown-item">
+                            {{ Str::limit($show->title??'', 10, '...') }}
+                        </a>
+                    </li>
+                    @empty
+                    <li>
+                        <a href="#" class="dropdown-item text-center">Empty</a>
+                    </li>
+
+                @endforelse
             </ul>
           </li>
         </ul>

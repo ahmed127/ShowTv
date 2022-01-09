@@ -62,7 +62,7 @@ class User extends Authenticatable
 
     public function getMyMoneyAttribute($value)
     {
-        return $this->wallet + $this->gift->amount??0;
+        return $this->wallet + optional($this->gift)->amount??0;
     }
 
     public function gift()

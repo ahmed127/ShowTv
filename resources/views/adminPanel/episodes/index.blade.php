@@ -42,7 +42,7 @@
                 @include('sessionMessage')
 
                 <div>
-                  <form action="{{ route('adminPanel.shows.index') }}" method="GET">
+                  <form action="{{ route('adminPanel.shows.episodes.index', $show->id) }}" method="GET">
                       @csrf
                       <div class="card-body row">
                           <div class="form-group col-4">
@@ -89,7 +89,7 @@
 
                           <div class="form-group col-12">
                               <button type="submit" class="btn btn-sm btn-secondary"><i class="fas fa-search"></i></button>
-                              <a href="{{ route('adminPanel.shows.index') }}" class="btn btn-sm btn-secondary"><i class="fa fa-undo"></i></a>
+                              <a href="{{ route('adminPanel.shows.episodes.index', $show->id) }}" class="btn btn-sm btn-secondary"><i class="fa fa-undo"></i></a>
                           </div>
                       </div>
                   </form>

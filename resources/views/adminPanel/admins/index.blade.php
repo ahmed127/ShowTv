@@ -49,7 +49,7 @@
                           </div>
 
                           <div class="form-group col-4">
-                              <label for="emailInput">Price</label>
+                              <label for="emailInput">Email</label>
                               <input type="email" name="email" class="form-control" id="emailInput" value="{{ request('email') }}">
                           </div>
 
@@ -91,7 +91,6 @@
                       <td>
 
                         <form action="{{ route('adminPanel.admins.destroy', $admin->id) }}" method="POST">
-                          <a href="{{ route('adminPanel.admins.show', $admin->id) }}" class="btn btn-sm btn-secondary"><i class="fas fa-eye"></i></a>
                           @can('admins edit')
                           <a href="{{ route('adminPanel.admins.edit', $admin->id) }}" class="btn btn-sm btn-secondary"><i class="fas fa-pencil-alt"></i></a>
                           @endcan

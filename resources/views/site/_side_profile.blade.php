@@ -18,10 +18,7 @@
                     <b>My Profile</b> <a class="float-right" href="{{ route('site.profile') }}">Update</a>
                 </li>
                 <li class="list-group-item">
-                    <b>My Wallet</b> <a class="float-right"href="{{ route('site.wallet') }}">{{ $user->wallet??'' }} $</a>
-                </li>
-                <li class="list-group-item">
-                    <b>Gift</b> <a class="float-right">{{ $user->gift->amount??'' }} $</a>
+                    <b>My Wallet</b> <a class="float-right"href="{{ route('site.wallet') }}">{{ $user->my_money??'' }} $</a>
                 </li>
                 <li class="list-group-item">
                     <b>My Purchases</b> <a class="float-right" href="{{ route('site.purchase') }}">{{ $user->purchases_count}}</a>

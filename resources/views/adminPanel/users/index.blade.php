@@ -41,7 +41,7 @@
                               <label for="emailInput">Email</label>
                               <input type="text" name="email" class="form-control" id="emailInput" value="{{ request('email') }}">
                           </div>
-                          
+
                           <div class="form-group col-4">
                               <label for="paginationInput">Pagination</label>
                               <Select name="pagination" id="typeInput" class="form-control">
@@ -79,7 +79,7 @@
                       </td>
                       <td>{{$user->name??''}}</td>
                       <td>{{$user->email??''}}</td>
-                      <td>{{$user->wallet??''}}</td>
+                      <td>{{$user->my_money??''}}</td>
                     </tr>
                   @endforeach
                 </tbody>
